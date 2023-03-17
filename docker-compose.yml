@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  prisma-node-api:
+    image: postgres:alpine
+    ports: 
+      - "5435:5432"
+    container_name: "prisma-node-api"
+    restart: always
+    volumes:
+      - ./my-api:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: ps_password
+volumes:
+  my-api:
+
+
